@@ -36,7 +36,7 @@ export const fetchEvents = (): any =>
               severity: "info",
               message: "Start API and click RESET"
             }}))
-            dispatch(notification("error", `No API @ ${endpoint}`))
+            dispatch(notification("info", `API not running`))
           }
         })
     } catch (error: any) {

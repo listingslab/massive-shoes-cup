@@ -1,11 +1,12 @@
 import React from "react"
 import {
-  Box,
-    Button,
+  // Box,
+  IconButton,
+  // Button,
 } from "@mui/material"
 import {
     Icon,
-    Font,
+    // Font,
     useGoldlabelSelect,
     useGoldlabelDispatch,
     selectMode,
@@ -20,16 +21,19 @@ export default function ModeToggle() {
   }
 
   return (<>
-            <Button
+            <IconButton
               onClick={onToggle}
-              variant="text"
             >
               <Icon icon={mode === "dark" ? "light" : "dark"} color="secondary"/>
-              <Box sx={{mx:1.5}}>
+              
+            </IconButton>
+          </>)
+}
+
+/*
+<Box sx={{mx:1.5}}>
                 <Font>
                   {mode === "dark" ? "Light" : "Dark"}
                 </Font>
               </Box>
-            </Button>
-          </>)
-}
+*/

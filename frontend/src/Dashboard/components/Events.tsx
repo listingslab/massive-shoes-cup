@@ -8,8 +8,7 @@ import {
     CardHeader,
     CardMedia,
     List,
-    ListItemButton,
-    ListItemText,
+
     Alert,
     AlertTitle,
 } from "@mui/material"
@@ -25,6 +24,7 @@ import {
     selectEvents,
     selectError,
     fetchEvents,
+    Event,
 } from "../../Dashboard"
 
 
@@ -39,6 +39,39 @@ export default function Events() {
     }, [loading, loaded, dispatch])
 
     return (<>
+            <Card sx={{m:1}}>
+                <CardHeader 
+                    avatar={<Icon icon="rocket" color="secondary" />}
+                    title={<Font variant="giant">
+                                Massive Shoes Cup
+                            </Font>}
+                />
+                <CardMedia 
+                    component={"img"}
+                    height={175}
+                    src={"/massive-shoes.webp"}
+                    alt={"Massive Shoes Cup"}
+                />
+                <CardContent>
+                    {events.length ? <>
+                        <List>
+                            {events.map((event: EventShape, i: number) => {
+                                // console.log("event", event)
+                                const {
+                                    event_id,
+                                    event_name,
+                                } = event
+                                return <Event key={`event_${i}`} event={event} />
+                            })}
+                        </List>
+                    </> : null }
+                </CardContent>
+                <CardActions>
+                    <Box sx={{flexGrow:1}}/>
+                    <ModeToggle />
+                    <Reset />
+                    <Box sx={{flexGrow:1}}/>
+                </CardActions>
 
                 {error ? <>
                     <Alert sx={{m:1}} severity={error.severity}>
@@ -47,56 +80,13 @@ export default function Events() {
                                 {error.message} 
                             </Font>
                         </AlertTitle>
-                        
                     </Alert>
                 </> : null }
-
-            <Card sx={{m:1}}>
-                <CardHeader 
-                    avatar={<Icon icon="rocket" color="secondary" />}
-                    title={<Font variant="title">
-                                Massive Shoes Cup
-                            </Font>}
-                />
-                <CardMedia 
-                    component={"img"}
-                    height={175}
-                    src={"/massive-shoes.webp"}
-                    alt={"pimoroni"}
-                />
-
-                <CardContent>
-                    {events.length ? <>
-                    <List>
-                        {events.map((event: EventShape, i: number) => {
-                            // console.log("event", event)
-                            const {
-                                event_id,
-                                event_name,
-                            } = event
-                            return <ListItemButton
-                                        key={event_id}
-                                    >
-                                        <ListItemText 
-                                            primary={<Font>
-                                                {event_name}
-                                            </Font>}
-                                        />
-                                        
-                                    </ListItemButton>
-                        })}
-                    </List>
-                </> : null }
                 
-                </CardContent>
-                <CardActions>
-                    <Box sx={{flexGrow:1}}/>
-                    <ModeToggle />
-                    <Reset />
-                </CardActions>
             </Card>
           </>)
 }
+
 
 /*
 <pre>events: {JSON.stringify(events, null, 2)}</pre>

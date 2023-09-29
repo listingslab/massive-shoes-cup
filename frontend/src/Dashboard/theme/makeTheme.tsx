@@ -15,7 +15,7 @@ export function makeTheme(
         main: mode === "dark" ? secondary : primary,
       },
       action: {
-        active: mode === "light" ? primary : secondary,
+        active: mode === "light" ? secondary : primary,
       },
       background: {
         default:  mode === "dark" ? lighten("#000", 0.25) : "#FFF",
