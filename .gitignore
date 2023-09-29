@@ -1,3 +1,6 @@
+.DS_Store
+backend/lib
+
 # Logs
 logs
 *.log
