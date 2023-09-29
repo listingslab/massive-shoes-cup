@@ -2,7 +2,7 @@ import {PaletteMode} from "@mui/material"
 import { 
   setGoldlabelKey,
   notification,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 
 export const toggleMode =
   (value: PaletteMode): any =>

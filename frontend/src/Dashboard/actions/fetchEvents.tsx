@@ -2,7 +2,7 @@ import axios from "axios"
 import { 
   setGoldlabelKey,
   notification,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 
 export const fetchEvents = (): any =>
   async (dispatch: any) => {

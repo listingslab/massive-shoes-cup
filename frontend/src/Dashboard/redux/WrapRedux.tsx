@@ -1,7 +1,7 @@
 import React from "react"
 import { Provider } from "react-redux"
 import { PersistGate } from "redux-persist/integration/react"
-import { store, persistor } from "../../MassiveShoes"
+import { store, persistor } from "../../Dashboard"
 
 export function WrapRedux(props: any) {
   const {children} = props

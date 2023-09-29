@@ -10,7 +10,7 @@ import {
     useGoldlabelDispatch,
     selectMode,
     toggleMode,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 
 export default function ModeToggle() {
   const dispatch = useGoldlabelDispatch()

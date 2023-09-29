@@ -25,7 +25,7 @@ import {
     selectEvents,
     selectError,
     fetchEvents,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 
 
 export default function Events() {
@@ -51,12 +51,11 @@ export default function Events() {
                     </Alert>
                 </> : null }
 
-
             <Card sx={{m:1}}>
                 <CardHeader 
                     avatar={<Icon icon="rocket" color="secondary" />}
                     title={<Font variant="title">
-                                Massive Shoes
+                                Massive Shoes Cup
                             </Font>}
                 />
                 <CardMedia 

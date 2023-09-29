@@ -1,7 +1,7 @@
 import {
     AlertColor,
 } from "@mui/material"
-import {setGoldlabelKey} from "../../MassiveShoes"
+import {setGoldlabelKey} from "../../Dashboard"
 
 export const notification =
   (severity: AlertColor, message: string): any =>

@@ -8,9 +8,9 @@ import {
   MuiTheme,
   Events,
   Notify,
-} from "../MassiveShoes"
+} from "../Dashboard"
 
-export default function MassiveShoes() {
+export default function Dashboard() {
 
   return (<>
             <WrapRedux>

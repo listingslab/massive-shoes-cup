@@ -1,6 +1,6 @@
 import {
   notification,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 export const resetRedux = (): any => async (dispatch: any) => {
   try {
       localStorage.removeItem("persist:goldlabel")

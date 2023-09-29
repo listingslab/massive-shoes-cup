@@ -8,7 +8,7 @@ import {
     Font,
     useGoldlabelDispatch,
     resetRedux,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 
 export default function Reset() {
   const dispatch = useGoldlabelDispatch()

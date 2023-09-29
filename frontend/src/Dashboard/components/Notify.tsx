@@ -9,7 +9,7 @@ import {
   useGoldlabelSelect,
   selectNotify,
   setGoldlabelKey,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 
 export default function Notifyer() {
   const dispatch = useGoldlabelDispatch()

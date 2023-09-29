@@ -6,7 +6,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../redux/store"
 
 const initialState: GoldlabelShape = {
-  mode: "light",
+  mode: "dark",
   primary: "#dc1325",
   secondary: "#fff552",
   error: null,

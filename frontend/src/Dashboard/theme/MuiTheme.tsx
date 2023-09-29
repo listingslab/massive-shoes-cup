@@ -9,7 +9,7 @@ import {
   selectMode,
   selectPrimary,
   selectSecondary,
-} from "../../MassiveShoes"
+} from "../../Dashboard"
 
 export default function MuiTheme(props: any) {
   const {children} = props
