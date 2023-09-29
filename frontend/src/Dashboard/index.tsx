@@ -11,6 +11,7 @@ import {
     selectEvents,
     selectSecondary,
     selectPrimary,
+    selectBetslip,
 } from "./redux/reducer"
 import {store, persistor} from "./redux/store"
 import {WrapRedux} from "./redux/WrapRedux"
@@ -23,10 +24,14 @@ import Events from "./components/Events"
 import ModeToggle from "./components/ModeToggle"
 import Reset from "./components/Reset"
 import Notify from "./components/Notify"
+import Betslip from "./components/Betslip"
+import Stake from "./components/Stake"
 import {notification} from "./actions/notification"
 import {resetRedux} from "./actions/resetRedux"
 import {toggleMode} from "./actions/toggleMode"
 import {fetchEvents} from "./actions/fetchEvents"
+import {toggleBetslip} from "./actions/toggleBetslip"
+import {placeBet} from "./actions/placeBet"
 
 export {
     Dashboard,
@@ -34,6 +39,8 @@ export {
     resetRedux,
     toggleMode,
     fetchEvents,
+    placeBet,
+    toggleBetslip,
     useGoldlabelDispatch,
     useGoldlabelSelect,
     setGoldlabelKey,
@@ -45,6 +52,7 @@ export {
     selectEvents,
     selectSecondary,
     selectPrimary,
+    selectBetslip,
     store,
     persistor,
     WrapRedux,
@@ -57,4 +65,6 @@ export {
     ModeToggle,
     Reset,
     Notify,
+    Betslip,
+    Stake,
 }

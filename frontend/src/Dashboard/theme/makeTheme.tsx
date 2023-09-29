@@ -18,8 +18,8 @@ export function makeTheme(
         active: mode === "light" ? secondary : primary,
       },
       background: {
-        default:  mode === "dark" ? lighten("#000", 0.25) : "#FFF",
-        paper: mode === "dark" ? "#000" : secondary,
+        default:  mode === "dark" ? "#000" : "#FFF",
+        paper: mode === "dark" ? "#000" : "#FFF",
       },
     },
   }

@@ -7,6 +7,7 @@ export type GoldlabelShape = {
     error: any
     notify: NotifyShape | null
     events: Array<EventShape>
+    betslip: EventShape | null
 }
 
 export type EventShape = {

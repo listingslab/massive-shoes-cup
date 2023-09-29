@@ -14,6 +14,7 @@ const initialState: GoldlabelShape = {
   loading: false,
   loaded: false,
   events: [],
+  betslip: null,
 }
 
 export const goldlabelSlice = createSlice({
@@ -36,6 +37,8 @@ export const selectLoaded = (state: RootState) => state.loaded
 export const selectEvents = (state: RootState) => state.events
 export const selectPrimary = (state: RootState) => state.primary
 export const selectSecondary = (state: RootState) => state.secondary
+export const selectBetslip = (state: RootState) => state.betslip
+
 
 export const { setGoldlabelKey } = goldlabelSlice.actions
 export default goldlabelSlice.reducer

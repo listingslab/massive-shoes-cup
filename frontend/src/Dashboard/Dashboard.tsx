@@ -7,6 +7,7 @@ import {
   WrapRedux,
   MuiTheme,
   Events,
+  Betslip,
   Notify,
 } from "../Dashboard"
 
@@ -16,6 +17,7 @@ export default function Dashboard() {
             <WrapRedux>
               <MuiTheme>
                 <CssBaseline />
+                <Betslip />
                 <Notify />
                 <Container maxWidth={"sm"}>
                   <Events />

@@ -8,7 +8,6 @@ import {
     CardHeader,
     CardMedia,
     List,
-
     Alert,
     AlertTitle,
 } from "@mui/material"
@@ -39,7 +38,7 @@ export default function Events() {
     }, [loading, loaded, dispatch])
 
     return (<>
-            <Card sx={{m:1}}>
+            <Box sx={{m:1}}>
                 <CardHeader 
                     avatar={<Icon icon="rocket" color="secondary" />}
                     title={<Font variant="giant">
@@ -83,7 +82,7 @@ export default function Events() {
                     </Alert>
                 </> : null }
                 
-            </Card>
+            </Box>
           </>)
 }
 

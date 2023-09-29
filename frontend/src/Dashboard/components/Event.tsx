@@ -1,16 +1,15 @@
 import React from "react"
 import {
-    // Box,
     Chip,
     ListItemButton,
     ListItemText,
     ListItemIcon,
 } from "@mui/material"
 import {
-    // Icon,
     Font,
     useGoldlabelDispatch,
     // selectEvent,
+    toggleBetslip,
 } from "../../Dashboard"
 
 export default function Event(props: any) {
@@ -22,6 +21,7 @@ export default function Event(props: any) {
   } = event
 
   const onSelect = () => {
+    dispatch(toggleBetslip(event))
     return true
   }
 
@@ -41,10 +41,5 @@ export default function Event(props: any) {
                 />
               </ListItemIcon>
             </ListItemButton>
-            
           </>)
 }
-
-/*
-<pre>event: {JSON.stringify(event, null, 2)}</pre>
-*/
