@@ -26,7 +26,7 @@ app.get('/api/events', async (req: Request, res: Response) => {
     respond(req, res, {output: {
       code: 200,
       severity: "success",
-      message: "Event list",      
+      message: "Massive Shoes Cup Event list",      
       data: result.rows,
     }})
   } catch (error) {
