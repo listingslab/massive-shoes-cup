@@ -1,19 +1,45 @@
 import React from "react"
 import {
-    Box,
-    Button,
+    Chip,
+    ListItemButton,
+    ListItemText,
+    ListItemIcon,
 } from "@mui/material"
 import {
-    Icon,
     Font,
     useGoldlabelDispatch,
-    resetRedux,
+    // selectEvent,
+    toggleBetslip,
 } from "../../Dashboard"
 
-export default function Event() {
+export default function Event(props: any) {
+  const {event} = props
   const dispatch = useGoldlabelDispatch()
+  const {
+    event_name, 
+    odds,
+  } = event
+
+  const onSelect = () => {
+    dispatch(toggleBetslip(event))
+    return true
+  }
 
   return (<>
-            Event
+            <ListItemButton onClick={onSelect}>
+              <ListItemText 
+                primary={<Font>
+                          {event_name}
+                        </Font>}
+              />
+              <ListItemIcon>
+                <Chip 
+                  label={<Font>
+                    {odds}
+                  </Font>} 
+                  color="primary"
+                />
+              </ListItemIcon>
+            </ListItemButton>
           </>)
 }

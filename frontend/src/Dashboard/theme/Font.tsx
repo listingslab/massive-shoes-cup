@@ -32,13 +32,13 @@ export function Font(props: any) {
 
   if (align) textAlign = align
   if (variant === "title") {
-    textfontSize = isBig ? "1.25rem" : "1rem"
+    textfontSize = isBig ? "1.25rem" : "0.9rem"
   }
   if (variant === "small") {
     textfontSize = isBig ? "0.8rem" : "0.8rem"
   }
   if (variant === "giant") {
-    textfontSize = isBig ? "1rem" : "0.9rem"
+    textfontSize = isBig ? "1.5rem" : "1rem"
   }
   if (fontSize) textfontSize = fontSize
   if (fixedH) fH = fixedH
