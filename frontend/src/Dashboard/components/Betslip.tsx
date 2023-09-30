@@ -41,6 +41,7 @@ export default function Betslip() {
               open={open}
               fullWidth
               maxWidth="xs"
+              onClose={onCancel}
             >
               <DialogTitle>
                 <Font variant="title">
@@ -53,18 +54,8 @@ export default function Betslip() {
               </DialogContent>
               
               <DialogActions>
-
                 <Button
-                  variant="contained"
-                  onClick={onCancel}
-                >
-                  <Font>
-                    Cancel
-                  </Font>
-                </Button>
-
-
-                <Button
+                  fullWidth
                   variant="contained"
                   color="primary"
                   onClick={onBet}
