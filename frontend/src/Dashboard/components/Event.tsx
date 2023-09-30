@@ -28,9 +28,9 @@ export default function Event(props: any) {
   return (<>
             <ListItemButton onClick={onSelect}>
               <ListItemText 
-                primary={<Font variant="title">
-                  {event_name}
-                </Font>}
+                primary={<Font>
+                          {event_name}
+                        </Font>}
               />
               <ListItemIcon>
                 <Chip 

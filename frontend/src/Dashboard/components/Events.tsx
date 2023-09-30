@@ -2,7 +2,6 @@ import React from "react"
 import {EventShape} from "../../../../types"
 import {
     Box,
-    Card,
     CardContent,
     CardActions,
     CardHeader,
@@ -44,8 +43,13 @@ export default function Events() {
                     title={<Font variant="giant">
                                 Massive Shoes Cup
                             </Font>}
+                    action={<Box sx={{m:1}}>
+                                <ModeToggle />
+                                <Reset />
+                            </Box>}
                 />
                 <CardMedia 
+                    sx={{px:2}}
                     component={"img"}
                     height={175}
                     src={"/massive-shoes.webp"}
@@ -55,11 +59,6 @@ export default function Events() {
                     {events.length ? <>
                         <List>
                             {events.map((event: EventShape, i: number) => {
-                                // console.log("event", event)
-                                const {
-                                    event_id,
-                                    event_name,
-                                } = event
                                 return <Event key={`event_${i}`} event={event} />
                             })}
                         </List>
@@ -67,8 +66,7 @@ export default function Events() {
                 </CardContent>
                 <CardActions>
                     <Box sx={{flexGrow:1}}/>
-                    <ModeToggle />
-                    <Reset />
+                    
                     <Box sx={{flexGrow:1}}/>
                 </CardActions>
 

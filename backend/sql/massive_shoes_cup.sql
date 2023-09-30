@@ -5,7 +5,7 @@
 -- Dumped from database version 16.0
 -- Dumped by pg_dump version 16.0
 
--- Started on 2023-09-30 13:05:18 CEST
+-- Started on 2023-09-30 14:26:41 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -45,9 +45,9 @@ ALTER TABLE public.events OWNER TO postgres;
 COPY public.events (event_id, event_name, odds) FROM stdin;
 1	Crocs to beat Paris Fashion Week 2-0	3.70
 2	Proenza Schouler to beat Loewe's	1.75
-3	Big Foot 2.0 to beat Puddle Boots	1.25
-4	Adidas Superstars vs Big Red Boot 3-0	5.33
 5	Cowboy Boots to beat Kitten Heels	2.25
+4	Adidas Superstars to beat Big Red Boot 3-0	5.33
+3	Big Foot to beat Puddle Boots	1.25
 \.
 
 
@@ -60,7 +60,7 @@ ALTER TABLE ONLY public.events
     ADD CONSTRAINT events_pkey PRIMARY KEY (event_id);
 
 
--- Completed on 2023-09-30 13:05:18 CEST
+-- Completed on 2023-09-30 14:26:41 CEST
 
 --
 -- PostgreSQL database dump complete

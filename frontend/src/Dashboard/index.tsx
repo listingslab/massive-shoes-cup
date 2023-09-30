@@ -31,6 +31,7 @@ import {resetRedux} from "./actions/resetRedux"
 import {toggleMode} from "./actions/toggleMode"
 import {fetchEvents} from "./actions/fetchEvents"
 import {toggleBetslip} from "./actions/toggleBetslip"
+import {updateStake} from "./actions/updateStake"
 import {placeBet} from "./actions/placeBet"
 
 export {
@@ -41,6 +42,7 @@ export {
     fetchEvents,
     placeBet,
     toggleBetslip,
+    updateStake,
     useGoldlabelDispatch,
     useGoldlabelSelect,
     setGoldlabelKey,

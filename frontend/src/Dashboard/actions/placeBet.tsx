@@ -1,15 +1,15 @@
-import {EventShape} from "../../../../types"
 import { 
-  setGoldlabelKey,
+  toggleBetslip,
   notification,
 } from "../../Dashboard"
 
 export const placeBet =
-  (bet: any): any =>
+  (win: any): any =>
   async (dispatch: any) => {
     try {
-        console.log("bet", bet)
-        //   dispatch(setGoldlabelKey({ key: "betslip", value: selectedEvent}))
+        dispatch(toggleBetslip(null))
+        dispatch(notification("success", `Nice one, you bet ${win}. Be Lucky`))
+
     } catch (error: any) {
       dispatch(notification("error", error))
     }

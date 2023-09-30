@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Box,
   Dialog,
   DialogTitle,
   Button,
@@ -7,6 +8,7 @@ import {
   DialogActions,
 } from "@mui/material"
 import {
+    Icon,
     Font,
     useGoldlabelDispatch,
     useGoldlabelSelect,
@@ -21,18 +23,26 @@ export default function Betslip() {
   const dispatch = useGoldlabelDispatch()
   let open = false
   let title: string= "Bet Slip"
+  let cta: string = "Bet Now"
+  let win: number = 0
+  let odds: number = 0
   if (betslip) {
+    const {stake, event_name} = betslip
+    odds = betslip.odds
+    win = Math.floor(stake*odds*100)/100
     open = true
-    title = betslip.event_name
+    title = event_name
+    cta = `Bet Now to win ${win}`
   }
-  // console.log("betslip", betslip)
+
+  
   const onCancel = () => {
     dispatch(toggleBetslip(null))
     return true
   }
 
   const onBet = () => {
-    dispatch(placeBet(betslip))
+    dispatch(placeBet(win))
     return true
   }
 
@@ -44,9 +54,11 @@ export default function Betslip() {
               onClose={onCancel}
             >
               <DialogTitle>
-                <Font variant="title">
-                  {title}
-                </Font>
+                <Box sx={{}}>
+                  <Font variant="title">
+                    Bet on {title} at odds of {odds}
+                  </Font>
+                </Box>
               </DialogTitle>
 
               <DialogContent>
@@ -55,14 +67,17 @@ export default function Betslip() {
               
               <DialogActions>
                 <Button
+                  sx={{m:1}}
                   fullWidth
-                  variant="contained"
-                  color="primary"
-                  onClick={onBet}
-                >
-                 <Font>
-                  Place bet
-                </Font>
+                  variant="outlined"
+                  color="secondary"
+                  onClick={onBet}>
+                  <Box sx={{mr:2, mt:0.5}}>
+                    <Icon icon="rocket" />
+                  </Box>
+                    <Font>
+                      {cta}
+                    </Font>
                 </Button>
               </DialogActions>
 

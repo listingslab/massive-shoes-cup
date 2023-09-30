@@ -7,13 +7,13 @@ export type GoldlabelShape = {
     error: any
     notify: NotifyShape | null
     events: Array<EventShape>
-    betslip: EventShape | null
+    betslip: any
 }
 
 export type EventShape = {
     event_id: string
     event_name: string
-    odds: number
+    odds: number|null
 }
 
 export type NotifyShape = {
