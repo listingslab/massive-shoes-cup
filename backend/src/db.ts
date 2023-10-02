@@ -10,5 +10,4 @@ const pgConfig: PoolShape = {
 }
 
 const postgresDB = new Pool(pgConfig)
-// console.log("hey.", postgresDB)
 module.exports = postgresDB
