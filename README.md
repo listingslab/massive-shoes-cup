@@ -1,8 +1,9 @@
 ## Massive Shoes Cup
 
-This is a finished technical test, which are used in the recruitment process for Software Development. The original brief is underneath
+We've used the Material UI Design System to rapidly prototype a React frontend which is a mobile first,  Progressive Web App. It also uses features developed by us; like the [Icon](frontend/src/Dashboard/theme/Icon.tsx) component and [redux](frontend/src/Dashboard/redux/store.ts) pattern. 
 
-### Install & run
+
+### Install & Run
 
 1. #### Clone & install dependencies
 
@@ -15,7 +16,7 @@ cd massive-shoes-cup && npm run setup
 
 2. #### Create & Seed Database 
 
-If you don't already have one you'll need a Postgres Server which you can get from **[enterprisedb](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)**. Create a new database called **`massive_shoes_cup`**. Using **[pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html)** from the file `/backend/sql/massive_shoes_cup.sql` _should_ produce a single table called **events** with 5 rows of data. Next you might need to adjust the connection settings in **[/backend/src/db.ts](/backend/src/db.ts)**
+If you don't already have one you'll need a Postgres Server which you can get from [enterprisedb](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). Create a new database called `massive_shoes_cup`. Restore the backup using [pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html) on the file [massive_shoes_cup.sql](/backend/sql/massive_shoes_cup.sql) . That _should_ produce a single table called events with 5 rows of data. Next you might need to adjust the connection settings in [/backend/src/db.ts](/backend/src/db.ts)
 
 ```javascript
 const pgConfig: PoolShape = {
@@ -29,15 +30,25 @@ const pgConfig: PoolShape = {
 
 3. #### Start API
 
-Assume that all npm commands are run from the project root. To start the API and expose the endpoint the frontend will connect to, run `npm run api`. This should yield the desired endpoint at http://localhost:4000/api/events/. If not, or if you want to make changes to the code you'll want to turn on the TypeScript compiler by running `npm run api:dev`. With nodemon taking care of reloading the app on change, the dev environment is easy to use
+Assume that all npm commands are run from the project root. To start the API and expose the endpoint the frontend will connect to, run. 
+
+```bash
+npm run api
+```
+Verify endpoint at http://localhost:4000/api/events/. If you want to make changes to the code you'll want to turn on the TypeScript watch mode by running `npm run api:dev`. With nodemon taking care of reloading the app on change, the dev environment is easy to use
 
 4. #### Start Frontend
 
-run `npm start`. The react app should open automatically http://localhost:3000, connect to the endpoint and display the events as specs. If there are connection problems or errors these will be shown as meaningful error notifications in the app for easy debugging
+```bash
+npm start
+```
+The react app will open automatically http://localhost:3000. If there are connection problems or errors these are shown as meaningful error notifications in the app for easy debugging
 
-5. #### QA
+5. #### QA  
 
-Try the following network scenarios
+Please note that the app uses a redux store which is persisted in localstorage. This means that any state changes remain after refreshing the page. To reset the application (ie; reload the endpoint after an error), you need to trigger [/actions/resetRedux.tsx](frontend/src/Dashboard/actions/resetRedux.tsx) by clicking click ![refresh](frontend/public/refresh.png)
+
+To check network error handling, try the following network scenarios;
 
 - Start api first, then frontend, RESET
 - Turn off the API and click RESET in the app

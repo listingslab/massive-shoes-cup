@@ -20,6 +20,8 @@ import {
 
 export default function Betslip() {
   const betslip = useGoldlabelSelect(selectBetslip)
+  let stake = 1
+  if (betslip) stake = betslip.stake
   const dispatch = useGoldlabelDispatch()
   let open = false
   let title: string= "Bet Slip"
@@ -32,10 +34,9 @@ export default function Betslip() {
     win = Math.floor(stake*odds*100)/100
     open = true
     title = event_name
-    cta = `Bet Now to win ${win}`
+    cta = `Bet & Win ${win}`
   }
 
-  
   const onCancel = () => {
     dispatch(toggleBetslip(null))
     return true
@@ -55,8 +56,8 @@ export default function Betslip() {
             >
               <DialogTitle>
                 <Box sx={{}}>
-                  <Font variant="title">
-                    Bet on {title} at odds of {odds}
+                  <Font>
+                    Bet {stake} on {title} at odds of {odds}
                   </Font>
                 </Box>
               </DialogTitle>
@@ -69,7 +70,7 @@ export default function Betslip() {
                 <Button
                   sx={{m:1}}
                   fullWidth
-                  variant="outlined"
+                  variant="text"
                   color="secondary"
                   onClick={onBet}>
                   <Box sx={{mr:2, mt:0.5}}>
