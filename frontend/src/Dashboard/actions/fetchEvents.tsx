@@ -33,10 +33,10 @@ export const fetchEvents = (): any =>
             dispatch(notification("error", `Server responded with a status code ${error.response.status}`))
           } else if (error.request) {
             dispatch(setGoldlabelKey({ key: "error", value: {
-              severity: "info",
-              message: "Start API and click RESET"
+              severity: "error",
+              message: "NETWORK ERROR. Start API and REFRESH"
             }}))
-            dispatch(notification("info", `API not running`))
+            dispatch(notification("error", `Check the API is running`))
           }
         })
     } catch (error: any) {

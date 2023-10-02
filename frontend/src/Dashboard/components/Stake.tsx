@@ -5,7 +5,7 @@ import {
   TextField,
   Grid,
 } from "@mui/material"
-import {
+import {  
   useGoldlabelSelect,
   useGoldlabelDispatch,
   selectBetslip,
@@ -15,19 +15,20 @@ import {
 export default function Stake() {
   const dispatch = useGoldlabelDispatch()
   const betslip = useGoldlabelSelect(selectBetslip)
-  
+  let stake = 1
+  if (betslip) stake = betslip.stake
   if(!betslip) return null
-  const {stake} = betslip
   return (
-    <Box sx={{}}>
+    <Box sx={{mt:2}}>
         <Grid container spacing={1}>
           <Grid item xs={12} md={6}>
             <TextField
-                helperText="Stake"
                 autoFocus
                 fullWidth
                 id="stake"
+                label="Stake"
                 type="number"
+                variant="filled"
                 value={stake}
                 onChange={(e: any) => {
                   dispatch(updateStake(parseFloat(e.target.value)))
@@ -39,6 +40,7 @@ export default function Stake() {
               <Box sx={{mb:4}}/>
               <Slider
                 color="secondary"
+                min={1}
                 valueLabelDisplay="on"
                 aria-label="Stake slider"
                 value={stake}

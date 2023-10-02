@@ -5,7 +5,7 @@
 -- Dumped from database version 16.0
 -- Dumped by pg_dump version 16.0
 
--- Started on 2023-09-30 14:26:41 CEST
+-- Started on 2023-10-02 02:25:21 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -60,7 +60,7 @@ ALTER TABLE ONLY public.events
     ADD CONSTRAINT events_pkey PRIMARY KEY (event_id);
 
 
--- Completed on 2023-09-30 14:26:41 CEST
+-- Completed on 2023-10-02 02:25:21 CEST
 
 --
 -- PostgreSQL database dump complete
